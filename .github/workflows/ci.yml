@@ -44,3 +44,6 @@ jobs:
 
       - name: Test with Gradle
         run: ./gradlew test --parallel
+
+      - name: Apply Spotless
+        run: ./gradlew spotlessCheck
