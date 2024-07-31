@@ -1,4 +1,4 @@
-package com.kodax.solanaj.rpc;
+package com.kodax.solanaj.account;
 
 /*
  * Copyright (c) 2024 Korea Digital Asset
@@ -10,14 +10,5 @@ package com.kodax.solanaj.rpc;
  * into with Korea Digital Asset.
  */
 
-import lombok.Getter;
-
-@Getter
-public class JsonResponseException extends RuntimeException {
-    private final JsonRpcResponse<?> response;
-
-    public JsonResponseException(String message, JsonRpcResponse<?> response) {
-        super(message);
-        this.response = response;
-    }
+public class Transaction {
 }
