@@ -2,6 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     id("java")
+    id("com.diffplug.spotless") version "6.10.0"
 }
 
 group = "com.kodax"
@@ -29,5 +30,18 @@ tasks.test {
         showCauses = true
         showExceptions = true
         showStackTraces = true
+    }
+}
+
+spotless {
+    java {
+        googleJavaFormat() // 구글 스타일 가이드 사용
+        importOrder("java", "javax", "org", "com", "korea-digital-asset-corp-public")
+        removeUnusedImports()
+    }
+    format("misc") {
+        target("**/*.gradle", "**/*.md", "**/*.yml", "**/*.yaml")
+        indentWithSpaces()
+        endWithNewline()
     }
 }

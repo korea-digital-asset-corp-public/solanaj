@@ -14,7 +14,7 @@ import lombok.Getter;
 
 @Getter
 public class RpcClientException extends RuntimeException {
-    public RpcClientException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public RpcClientException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

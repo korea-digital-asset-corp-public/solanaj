@@ -10,5 +10,4 @@ package com.kodax.solanaj.account;
  * into with Korea Digital Asset.
  */
 
-public class Transaction {
-}
+public class Transaction {}
