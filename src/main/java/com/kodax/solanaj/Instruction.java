@@ -10,15 +10,15 @@ package com.kodax.solanaj;
  * into with Korea Digital Asset.
  */
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.util.List;
 
 @Getter
 @AllArgsConstructor
 public class Instruction {
-    private PublicKey programId;
-    private List<AccountMeta> keys;
-    private byte[] data;
+  private PublicKey programId;
+  private List<AccountMeta> keys;
+  private byte[] data;
 }

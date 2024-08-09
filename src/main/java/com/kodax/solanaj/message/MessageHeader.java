@@ -14,31 +14,26 @@ import lombok.Getter;
 
 @Getter
 public class MessageHeader {
-    static final int HEADER_LENGTH = 3;
+  static final int HEADER_LENGTH = 3;
 
-    byte numRequiredSignatures = 0;
-    byte numReadonlySignedAccounts = 0;
-    byte numReadonlyUnsignedAccounts = 0;
+  byte numRequiredSignatures = 0;
+  byte numReadonlySignedAccounts = 0;
+  byte numReadonlyUnsignedAccounts = 0;
 
-    private MessageHeader(
-            byte numRequiredSignatures,
-            byte numReadonlySignedAccounts,
-            byte numReadonlyUnsignedAccounts
-    ) {
-        this.numRequiredSignatures = numRequiredSignatures;
-        this.numReadonlySignedAccounts = numReadonlySignedAccounts;
-        this.numReadonlyUnsignedAccounts = numReadonlyUnsignedAccounts;
-    }
+  private MessageHeader(
+      byte numRequiredSignatures,
+      byte numReadonlySignedAccounts,
+      byte numReadonlyUnsignedAccounts) {
+    this.numRequiredSignatures = numRequiredSignatures;
+    this.numReadonlySignedAccounts = numReadonlySignedAccounts;
+    this.numReadonlyUnsignedAccounts = numReadonlyUnsignedAccounts;
+  }
 
-    public static MessageHeader of(
-            byte numRequiredSignatures,
-            byte numReadonlySignedAccounts,
-            byte numReadonlyUnsignedAccounts
-    ) {
-        return new MessageHeader(
-                numRequiredSignatures,
-                numReadonlySignedAccounts,
-                numReadonlyUnsignedAccounts
-        );
-    }
+  public static MessageHeader of(
+      byte numRequiredSignatures,
+      byte numReadonlySignedAccounts,
+      byte numReadonlyUnsignedAccounts) {
+    return new MessageHeader(
+        numRequiredSignatures, numReadonlySignedAccounts, numReadonlyUnsignedAccounts);
+  }
 }
