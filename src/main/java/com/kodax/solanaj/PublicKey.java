@@ -1,18 +1,19 @@
-package com.kodax.solanaj.account;
+package com.kodax.solanaj;
 
 /*
  * Copyright (c) 2024 Korea Digital Asset
  * All rights reserved.
  *
- * This software is the confidential and proprietary information of $Korea Digital Asset.
+ * This software is the confidential and proprietary information of Korea Digital Asset.
  * You shall not disclose such Confidential Information and shall use it
  * only in accordance with the terms of the license agreement you entered
  * into with Korea Digital Asset.
  */
 
 import java.util.Arrays;
+import java.util.Objects;
 
-import com.kodax.solanaj.Base58;
+import com.kodax.solanaj.util.Base58;
 
 public class PublicKey {
 
@@ -65,5 +66,10 @@ public class PublicKey {
   @Override
   public String toString() {
     return toBase58();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(Arrays.hashCode(this.pubkey));
   }
 }

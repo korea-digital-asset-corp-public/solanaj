@@ -1,4 +1,4 @@
-package com.kodax.solanaj.rpc;
+package com.kodax.solanaj;
 
 /*
  * Copyright (c) 2024 Korea Digital Asset
@@ -10,16 +10,13 @@ package com.kodax.solanaj.rpc;
  * into with Korea Digital Asset.
  */
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-public class HttpException extends RuntimeException {
-  private final int statusCode;
-  private final String responseBody;
-
-  public HttpException(int statusCode, String responseBody, String message) {
-    super(message);
-    this.statusCode = statusCode;
-    this.responseBody = responseBody;
-  }
+@AllArgsConstructor
+public class AccountMeta {
+    private PublicKey publicKey;
+    private boolean isSigner;
+    private boolean isWritable;
 }
