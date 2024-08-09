@@ -15,26 +15,26 @@ import java.util.List;
 
 public class ShortvecEncoding {
 
-    public static byte[] encode(int value) {
-        List<Byte> bytes = new ArrayList<>();
+  public static byte[] encode(int value) {
+    List<Byte> bytes = new ArrayList<>();
 
-        while (true) {
-            int byteVal = value & 0x7F;
-            value >>= 7;
-            if (value == 0) {
-                bytes.add((byte) byteVal);
-                break;
-            } else {
-                byteVal |= 0x80;
-                bytes.add((byte) byteVal);
-            }
-        }
-
-        byte[] byteArray = new byte[bytes.size()];
-        for (int i = 0; i < bytes.size(); i++) {
-            byteArray[i] = bytes.get(i);
-        }
-
-        return byteArray;
+    while (true) {
+      int byteVal = value & 0x7F;
+      value >>= 7;
+      if (value == 0) {
+        bytes.add((byte) byteVal);
+        break;
+      } else {
+        byteVal |= 0x80;
+        bytes.add((byte) byteVal);
+      }
     }
+
+    byte[] byteArray = new byte[bytes.size()];
+    for (int i = 0; i < bytes.size(); i++) {
+      byteArray[i] = bytes.get(i);
+    }
+
+    return byteArray;
+  }
 }
