@@ -1,4 +1,4 @@
-package com.kodax.solanaj.account;
+package com.kodax.solanaj;
 
 /*
  * Copyright (c) 2024 Korea Digital Asset
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.kodax.solanaj.Base58;
+import com.kodax.solanaj.util.Base58;
 
 public class PublicKeyTest {
 
